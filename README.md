@@ -29,3 +29,11 @@ Before starting this tutorial, you will need to set up a Cloudant database on yo
 6. Now in the panel above grant all permission to your newly added API key using the tick boxes.
 
 ## Step 1 - Getting Started
+The fastest way to work through this guide is to clone the Git repository and use the projects that are provided inside:
+```
+git clone https://github.ibm.com/Engagement-Demos/Liberty-Watson-Cloud-Workshop
+cd Liberty-Watson-Cloud-Workshop
+```
+The `start` directory contains the starting project that you will build upon.
+
+The `finish` directory contains the finished project that you will build.
