@@ -10,8 +10,6 @@
  *******************************************************************************/
 package io.openliberty.guides.system;
 
-import java.net.URL;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
@@ -29,18 +27,6 @@ public class SystemConfig {
   @Inject
   @ConfigProperty(name = "io_openliberty_guides_email")
   private Provider<Email> email;
-  
-  @Inject
-  @ConfigProperty(name = "io_openliberty_guides_system_dbUrl")
-  Provider<URL> url;
-  
-  @Inject
-  @ConfigProperty(name = "io_openliberty_guides_system_apiKey")
-  Provider<String> apiKey;
-  
-  @Inject
-  @ConfigProperty(name = "io_openliberty_guides_system_dbName")
-  Provider<String> dbName;
 
   public boolean isInMaintenance() {
     return inMaintenance.get();

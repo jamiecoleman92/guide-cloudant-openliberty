@@ -35,6 +35,10 @@ public class SystemResource {
 
 	 @Inject
   SystemConfig systemConfig;
+	 
+	 String endpoint = "your endpoint url";
+	 String apiKey = "your api key";
+	 String dbName = "your db name";
 
   @GET
   @Produces(MediaType.APPLICATION_JSON)
@@ -43,14 +47,14 @@ public class SystemResource {
     	
    	 	URL test = null;
 		try {
-			test = new URL("https://e1cf9f82-898c-401e-8a66-e1d2cbdf0529-bluemix.cloudantnosqldb.appdomain.cloud");
+			test = new URL(endpoint);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 
 		// Connect to your Cloudant account
     	CloudantClient clientDB = com.cloudant.client.api.ClientBuilder.url(test)
-             .iamApiKey("kD9wH-tLh-EDVjTtOjVniHom7QU5pdd-HvhWZpmXzlPJ")
+             .iamApiKey(apiKey)
              .build();
     	
     	// List all the Databases
@@ -61,7 +65,7 @@ public class SystemResource {
     	}
     	
     	// Connect to database
-    	Database db = clientDB.database("sheffieldtest", false);
+    	Database db = clientDB.database(dbName, false);
     	
     	// Save new document to database
     	db.save(System.getProperties());
